@@ -9,6 +9,9 @@
     margin-bottom: 80px;
 }
 
+.login{
+    margin-top: 10px;
+}
 .main-part {
     display: flex;
     flex-direction: column;
