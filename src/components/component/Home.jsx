@@ -1,13 +1,12 @@
 import React from "react"
-import JobLogo from "./images/job-removebg-preview.png"
-import "./css/home.css"
-import BackgroundImage from "./images/bg-section.png"
-import Gjirafa from "./images/gjirafa.png"
-import Intersport from "./images/compact-mark-rgb-block-bounding-box.jpg"
-import Ubt from "./images/ubt.png"
-import Waikiki from "./images/lc.jpg"
-import Starlabs from "./images/starlabs.png"
-import wood from "./images/Hand-drawn-outline-of-an-arrow-sign-580x386-removebg-preview.png"
+import JobLogo from "../images/job-removebg-preview.png"
+import "../css/home.css"
+import BackgroundImage from "../images/bg-section.png"
+import Gjirafa from "../images/gjirafa.png"
+import Intersport from "../images/compact-mark-rgb-block-bounding-box.jpg"
+import Ubt from "../images/ubt.png"
+import Waikiki from "../images/lc.jpg"
+import Starlabs from "../images/starlabs.png"
 
 
 
@@ -18,15 +17,14 @@ export default function Home() {
             <nav className="navbar d-flex  navbar-expand-sm bg-light navbar-light header">
                 <div className="container-fluid ">
                     <div className="container d-flex">
-                        <a className="navbar-brand" href="">
-                            <img src={JobLogo} width="80px" height="60px" className="rounded" alt="Roi Logo" />
+                        <a className="navbar-brand logo-home" href="#">
+                            <img src={JobLogo} width="80px" height="60px" alt="Roi Logo" />
                         </a>
                         <div className="button-center">
                             <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#collapsenavbar">
                                 <span className="navbar-toggler-icon ikona"></span>
                             </button>
                         </div>
-
                         <div className="collapse navbar-collapse" id="collapsenavbar">
                             <ul className="navbar-nav my-0 mx-auto">
                                 <li className="nav-item">
@@ -39,9 +37,11 @@ export default function Home() {
                                     <a href="#" className="nav-link">Contact</a>
                                 </li>
                             </ul>
-                            <div className="d-flex  justify-content-center">
-                                <button className="btn login">Login</button>
-                                <button className="btn btn-secondary ms-1 signup  ">Sign up</button>
+                            <div className="auth">
+                                <button className="btn"><a href="/login"  className="auth-a  auth-a-login">Login</a></button>
+                                <p className="auth-paragraph">or</p>
+                                <button className="btn"><a href="/signup" className="auth-a auth-a-signup">Signup</a></button>
+                             
                             </div>
                         </div>
                     </div>
@@ -145,7 +145,7 @@ export default function Home() {
                                     <li>Detail-oriented</li>
                                     <li>Multitasking</li>
                                     <li>Self-motivated</li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -164,10 +164,10 @@ export default function Home() {
                             <div class="third">
                                 <h4> Contact</h4>
                                 <ul className="footer-ul">
-                                    <li>Andreea Mihaela Bunget </li>
-                                    <li><i class="far fa-envelope"></i> andreea@andreeabunget.co.uk</li>
-                                    <li><i class="far fa-envelope"></i> email@yahoo.com</li>
-                                    <li><i class="fas fa-map-marker-alt"></i> London, UK </li>
+                                    <li>Donjet Dana </li>
+                                    <li><i class="far fa-envelope"></i> donjetdana7@hotmail.com</li>
+                                    {/* <li><i class="far fa-envelope"></i> email@yahoo.com</li> */}
+                                    <li><i class="fas fa-map-marker-alt"></i> Prishtine, Kosove </li>
                                 </ul>
                             </div>
                         </div>
@@ -175,8 +175,6 @@ export default function Home() {
                 </div>
                 <div className="d-flex justify-content-center">Copyrights @ All Right Reserved 2024</div>
             </div>
-
-
         </div>
 
 

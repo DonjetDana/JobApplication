@@ -1,0 +1,27 @@
+[
+        {
+            "id":1,
+            "image":"lc.jpg",
+            "emriPunes":"Senior Front-End Engineer",
+            "lokacioni":"Prishtine"
+        },
+        {
+            "id":2,
+            "image":"starlabs.png",
+            "emriPunes":"Senior Front-End Engineer",
+            "lokacioni":"Prishtine"
+        },
+        {
+            "id":3,
+            "image":"ubt.png",
+            "emriPunes":"Senior Front-End Engineer",
+            "lokacioni":"Prishtine"
+        },
+        {
+            "id":4,
+            "image":"gjirafa.png",
+            "emriPunes":"Senior Front-End Engineer",
+            "lokacioni":"Prishtine"
+        }
+        
+]

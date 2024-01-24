@@ -1,0 +1,110 @@
+
+.content {
+    height: 280px;
+    box-shadow: 0px 0px 5px 0px;
+    width: 400px;
+    border-radius: 10px ;
+}
+.loginForm{
+    margin-bottom: 80px;
+}
+
+.login{
+    margin-top: 10px;
+}
+.main-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.div-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0px 20px;
+}
+.content-p{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.account {
+    color: rgb(33, 94, 224);
+    text-decoration: none;
+}
+
+.account:hover {
+    text-decoration: underline;
+}
+
+.logoDiv {
+    margin-top: 50px !important;
+}
+
+.form-button {
+    width: 250px;
+    padding: 7px;
+}
+
+.footer-login{
+    padding: 0;
+    /* margin-top: 170px; */
+    padding-top: 170px;
+    padding-bottom: 40px;
+    font-size: 15px;
+    background-color:rgb(49, 48, 48);
+
+}
+.footer-list{
+    list-style-type: none;
+    color: darkgray;
+}
+
+.footer-text{
+    text-decoration: none;
+}
+
+/* Signup part */
+
+.div-row{
+    padding: 0px 20px;
+}
+.checkboxes-signup{
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    background-color: white;
+    font-weight: 400;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    padding: 6px;
+    border-radius: 5px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.checkbox-label{
+    border: 1px solid black;
+    width: 100%;
+    cursor: pointer;
+}
+.checkbox-input{
+   margin: 5px 40px 0px 30px ;
+}
+.policy{
+    font-size: 10px;
+    padding: 5px 20px 0px 20px ;
+}
+
+.signupForm{
+    margin-bottom: 80px;
+}
+
+.contentSignup{
+    height: 570px;
+    box-shadow: 0px 0px 5px 0px;
+    width: 400px;
+    border-radius: 10px ;
+}

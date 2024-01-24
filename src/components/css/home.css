@@ -1,27 +1,93 @@
 .signup {
-    border-radius: 25px;
-    width: 80px;
+    width: 100px;
+    height: fit-content;
+}
 
+.container-fluid {
+    width: 100%;
+}
+
+.navbar-nav {
+    text-align: center;
+    align-items: center;
 }
 
 .header {
     box-shadow: 0px 0px 10px 3px gray;
 }
 
-.login {
-    width: 100px;
-    border-radius: 25px;
+.logo-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.login:hover {
-    color: darkgoldenrod;
+.login {
+    width: 100%;
+    height: fit-content;
+    background-color: aqua;
+}
+
+.auth {
+    display: flex;
+    justify-content: center;
+}
+
+.auth-a{
+    text-decoration: none;
+    padding: 0px 5px ;
+    color: darkgray;
+}
+
+.auth-a-login:hover{
+    color: blue;
+}
+.auth-paragraph{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.auth-a-signup{
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.auth-a-signup:hover{
+    color: rgb(245, 239, 227);
+    background-color: rgb(80, 80, 80);
+    transition: ease-in-out 0.2s ;
+}
+
+
+.navbar-collapse {
+    margin-top: 70px;
+    margin-right: 50px;
+}
+
+
+
+@media only screen and (min-width: 576px) {
+    .navbar-expand-sm .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        margin: 0;
+    }
 }
 
 .button-center {
+    padding: 16px;
+    padding-right: 70px;
+    position: absolute;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    margin: 0 auto;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 }
+
 
 .demo {
     height: 80vh;
@@ -34,7 +100,7 @@
 
 }
 
-.trusted{
+.trusted {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
 }
@@ -48,31 +114,34 @@
 }
 
 
-.image-section{
+.image-section {
     display: flex;
     overflow: hidden;
-    
+
 }
 
-.image-section img{
+.image-section img {
     width: 70px;
     height: 50px;
     margin: 20px 10px;
 }
 
- .second-section{
+.second-section {
     margin-top: 200px;
 }
-.box{
+
+.box {
     width: 450px;
     height: 350px;
     border-radius: 20px;
 }
-.material-icons{
+
+.material-icons {
     font-size: 35px;
 }
 
-.box-content-h2,.material-icons{
+.box-content-h2,
+.material-icons {
     font-size: 30px;
     font-weight: 700;
 }
@@ -82,22 +151,25 @@
 }
 
 
-.wood-image{
+.wood-image {
     width: 50px;
     height: 30px;
     margin-top: 0;
-} 
+}
 
-.footer{
-    background-color: rgb(61, 61, 61);
+.footer {
+    background-color: rgb(49, 48, 48);
     padding: 50px;
     color: white;
 }
-.footer-ul{
+
+.footer-list {
+    flex-wrap: wrap;
     list-style-type: none;
     color: darkgray;
 }
-.footer-a{
+
+.footer-a {
     text-decoration: none;
     color: darkgray;
 }
