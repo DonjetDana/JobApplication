@@ -3,25 +3,36 @@
             "id":1,
             "image":"lc.jpg",
             "emriPunes":"Senior Front-End Engineer",
-            "lokacioni":"Prishtine"
+            "lokacioni":"Prishtine",
+            "data":"08/02"
         },
         {
             "id":2,
             "image":"starlabs.png",
-            "emriPunes":"Senior Front-End Engineer",
-            "lokacioni":"Prishtine"
+            "emriPunes":".Net C# Developer",
+            "lokacioni":"Ferizaj",
+            "data":"01/03"
         },
         {
             "id":3,
             "image":"ubt.png",
-            "emriPunes":"Senior Front-End Engineer",
-            "lokacioni":"Prishtine"
+            "emriPunes":"English and German Translater",
+            "lokacioni":"Prishtine",
+            "data":"18/02"
         },
         {
             "id":4,
             "image":"gjirafa.png",
-            "emriPunes":"Senior Front-End Engineer",
-            "lokacioni":"Prishtine"
+            "emriPunes":"Administration and IT",
+            "lokacioni":"Prishtine",
+            "data":"28/01"
+        },
+        {
+            "id":5,
+            "image":"compact-mark-rgb-block-bounding-box.jpg",
+            "emriPunes":"Shites/Arkatare",
+            "lokacioni":"Peje",
+            "data":"18/02"
         }
         
 ]

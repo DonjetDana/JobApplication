@@ -2,88 +2,114 @@ import React from "react"
 import JobLogo from "../images/job-removebg-preview.png"
 import "../css/main.css"
 import data from "./jobs.json"
+import Footer from "./Footer"
+import Header from "./Header"
 
 
 export default function Main(){
 
-    console.log(data)
-    const [isSearchFormVisible,setIsSearchFormVisible] = React.useState(true);
+    
+    const [dinamicAdd,setDinamicAdd] = React.useState("");
 
-    function toggleSearch(){ 
-        if(isSearchFormVisible == false){
-            setTimeout(()=>{
-                setIsSearchFormVisible((prevState) => !prevState)
-            },350)
-        }
-        else{
-            setIsSearchFormVisible((prevState) => !prevState)
-        }
-    }
+   
+
+    const imageUrl = [
+       "kuzhinier.gif",
+        "account.png",
+        "tregu.gif",
+       "recepsionist.gif",
+       "1705501633.gif",
+       "neptun.gif",
+       "minva.gif"
+    ]
+
+
+
+    React.useEffect(() => {
+         const randomNumber = Math.floor(Math.random() * imageUrl.length);
+        setDinamicAdd(prevState => imageUrl[randomNumber])
+         console.log("image setted" + dinamicAdd)
+     }, [dinamicAdd]);
+   
+
 
 
 
     return(
         <div>
-            <nav className="navbar d-flex  navbar-expand-sm bg-light navbar-light header">
-                <div className="container-fluid">
-                    <div className="container d-flex">
-                        <a className="navbar-brand logo-home" href="#">
-                            <img src={JobLogo} width="80px" height="60px" alt="Roi Logo" />
-                        </a>
-                        <div className="button-center">
-                            <button className="navbar-toggler" 
-                            type="button" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#collapsenavbar"
-                            onClick={toggleSearch}
-                            >
-                                <span className="navbar-toggler-icon"></span>
-                            </button>
-                        </div>
-                        <div className="collapse navbar-collapse" id="collapsenavbar">
-                            <ul className="navbar-nav my-0 mx-auto">
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">Home</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">About</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                        {isSearchFormVisible ?
-                         <form className="search-form d-flex"  id="searchForm">
-                            <input className="form-control search-control me-2" type="text" placeholder="Search" />
-                            <button className="btn btn-primary search-button" type="button">Search</button>
-                        </form> : "" }
-                        
-                    </div>
-                </div>
-            </nav>
+            
+            <Header />
 
             <div className="container-fluid">
                 <div className="container">
                     <div className="adds">
-                        <div className="row d-flex justify-content-between">
-                            <div className=" col-sm-7 bg-dark mt-5 " >
-                                <img src={JobLogo} />
+                        <div className="row h-auto d-flex justify-content-between">
+                            <div className=" col-sm-8 mt-5  add-image" >
+                            {dinamicAdd && (
+                                <img
+                                    src={require(`../images/${dinamicAdd}`)}
+                                    id="dynamicImage"
+                                    className="rounded-3"
+                                    width="100%"
+                                    height="260px"
+                                    alt="Dynamic Add"
+                                />
+                                )}
                             </div>
-                            <div className="col-sm-4 mt-5 bg-success  ">
-                                <img src={JobLogo} />
+                            <div className="formaKonkursit bg-light col-sm mt-5 rounded-3">
+                                <p className="text-muted pt-1 fs-5 text-center">Kerko konkursin</p>
+                                <form action="" className="form-controll">
+                                   <input type="text" placeholder="Kerko sipas pozites se punes" 
+                                   className=" form-control w-100" />
+                                   <div className="custom-select">
+                                        <select className="form-control mt-2">
+                                                <option value="">Qyteti</option>
+                                                <option value="Gjakove">Gjakove</option>
+                                                <option value="Peje">Peje</option>
+                                                <option value="Prishtine">Prishtine</option>
+                                                <option value="Ferizaj">Ferizaj</option>
+                                        </select>
+                                        <i class="fa-solid fa-angle-down"></i>
+                                   </div>
+                                   <div className="custom-select">
+                                        <select className="form-control mt-2">
+                                                <option value="">Industria</option>
+                                                <option value="Arkitekture">Arkitekture</option>
+                                                <option value="Banka">Banka</option>
+                                                <option value="Prodhim">Prodhim</option>
+                                                <option value="IT">IT</option>
+                                        </select>
+                                        <i class="fa-solid fa-angle-down"></i>
+                                   </div>
+                                   <input type="submit" className="btn btn-dark text-white mt-2 w-100" value="Kerko"  />
+                                   <p className="pargrafiFormes">Filtro sipas pozites,qytetit dhe industrise</p>
+                                </form>
                             </div>
                         </div>
                     </div>
+
+                    <div className="container bg-light ">
+                        <p className="konkurset text-center p-2 m-3 ">Konkurset e hapura</p>
+                    </div>
                     
-                    <div className="row">
+                    <div className="row mt-4 mb-5">
                     {data ? data.map((job)=>(
-                        <div className="col-sm-4" key={job.id}>
-                        <div className="cards d-flex">
-                            <img src={require(`../images/${job.image}`)} width="150px" height="150px" alt="Lc Waikiki" />
-                            <div className="body d-flex flex-column justify-content-right">
-                                <div className="cards-header mb-5">{job.emriPunes}</div>
-                                <div className="cards-footer">{job.lokacioni}</div>
+                        <div className="col-sm-4" key={job.id} onClick={()=>{window.location.href = "/jobInformation"}}>
+                        <div className="cards  d-flex">
+                            <div className="job-image">
+                                <img src={require(`../images/${job.image}`)}  className="p-2" width="100px" height="90px" alt="Lc Waikiki" />
+                            </div>
+                           
+                            <div className="body d-flex flex-column justify-content-around">
+                                    <div className="cards-header mt-3  mb-2">{job.emriPunes}</div>
+                                <div className="cards-footer mt-3 d-flex">
+                                    <i className="fa-solid fa-location-dot mt-1 me-1"></i>
+                                <div>{job.lokacioni}</div> 
+                                   <div className="dataPerfundimit d-flex ms-3">
+                                        <i class="fa-solid fa-clock mt-1 ms-1"></i>
+                                        <p className="ms-1">{job.data}</p>
+                                   </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -93,6 +119,8 @@ export default function Main(){
                     </div>
                 </div>
             </div>
+
+            <Footer />
 
         </div>
     )

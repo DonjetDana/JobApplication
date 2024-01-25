@@ -5,6 +5,7 @@ import Home from "./components/component/Home";
 import Login from "./components/component/Login";
 import Signup from "./components/component/Signup";
 import Main from "./components/component/Main";
+import JobInformation from "./components/component/JobInformation";
 
 export default function App() {
   return (
@@ -14,6 +15,8 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/jobinformation" element={<JobInformation />} />
+
       </Routes>
     </div>
   )
