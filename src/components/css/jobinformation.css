@@ -1,10 +1,12 @@
 .information {
-    box-shadow: 0px 0px 2px 2px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
 }
 
 .information-name {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
     padding: 10px;
@@ -31,4 +33,41 @@
 
 .information-body-li{
     line-height: 14px;
+}
+
+.category{
+    width: 270px;
+    padding-left: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+    height: 200px !important;
+}
+
+.category-div{
+    height: 20px;
+}
+
+.category-p{
+    height: 10px;
+    margin-left: 10px;
+    width: 80px;
+}
+.second-category{
+    width: 270px;
+    padding-left: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-cards{
+    border-bottom: 1px solid gray;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+
+@media only screen and (max-width: 576px) {
+    .column2{
+        display: flex;
+        justify-content: center;
+    }
 }
