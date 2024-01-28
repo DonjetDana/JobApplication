@@ -35,13 +35,13 @@ export default function Header() {
                     <div className="collapse navbar-collapse" id="collapsenavbar">
                         <ul className="navbar-nav my-0 mx-auto">
                             <li className="nav-item">
-                                <a href="#" className="nav-link">Home</a>
+                                <a href="/" className="nav-link">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link">About</a>
+                                <a href="/about" className="nav-link">About</a>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link">Contact</a>
+                                <a href="/contact" className="nav-link">Contact</a>
                             </li>
                         </ul>
                     </div>

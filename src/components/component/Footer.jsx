@@ -23,10 +23,10 @@ export default function Footer(){
                             <div className="second">
                                 <h4> Navigate</h4>
                                 <ul className="footer-ul">
-                                    <li><a href="#" className="footer-a" >Home</a></li>
-                                    <li><a href="#" className="footer-a">Projects</a></li>
-                                    <li><a href="#" className="footer-a">About</a></li>
-                                    <li><a href="#" className="footer-a">Contact</a></li>
+                                    <li><a href="#" className="footer-a text-white" >Home</a></li>
+                                    <li><a href="#" className="footer-a text-white">Projects</a></li>
+                                    <li><a href="#" className="footer-a text-white">About</a></li>
+                                    <li><a href="#" className="footer-a text-white">Contact</a></li>
                                 </ul>
                             </div>
                         </div>

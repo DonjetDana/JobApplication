@@ -4,7 +4,7 @@ import "../css/jobinformation.css"
 import Footer from "./Footer"
 
 export default function JobInformation(props) {
-    console.log("jobinforamtion data :" + props.jobData)
+    console.log("jobinforamtion data : " + props.jobData)
 
     const foto = props.jobData.image;
 
