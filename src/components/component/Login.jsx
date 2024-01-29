@@ -2,7 +2,15 @@ import React from "react"
 import Logo from "../images/job-removebg-preview.png"
 import "../css/login.css"
 
-export default function Login() {
+export default function Login({onChange}) {
+
+    function handleChange(event){
+        const {name,value} = event.target;
+
+        onChange(name,value)
+    }
+
+
     return (
         <div>
 
@@ -18,13 +26,13 @@ export default function Login() {
                             <div className="mb-3 mt-3 d-flex flex-column justify-content-center">
                                 {/* <label htmlFor="email" className="text-center mb-2">Email:</label> */}
                                 <div className="div-input">
-                                    <input type="email" className="form-control ps-2" id="email" placeholder="Email or phone number" name="email" />
+                                    <input type="email" className="form-control ps-2" id="email" placeholder="Email or phone number" name="email" onChange={handleChange} />
                                 </div>
                             </div>
                             <div className="mb-3 mt-3 d-flex flex-column justify-content-center">
                                 {/* <label htmlFor="psw" className="text-center mb-2">Password:</label> */}
                                 <div className="div-input">
-                                    <input type="password" className="form-control ps-2" id="password" placeholder="Type your password" name="password" />
+                                    <input type="password" className="form-control ps-2" id="password" placeholder="Type your password" name="password" onChange={handleChange}/>
                                 </div>
                                 <input type="submit" className="form-button my-0 mx-auto mt-3 mb-2 btn btn-primary" value="Log in" />
                                 <a href="./signup" className="account text-center">Don't have an account? Sign up</a>

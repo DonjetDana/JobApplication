@@ -12,7 +12,23 @@
 
   export default function App() {
      const [selectedJob,setSelectedJob] = React.useState([]);
+     const [logData,setLogData] = React.useState({
+      email: "",
+      password: "",
+     });
+     
      const navigate = useNavigate();
+
+
+     function updateLoginData(eventName,eventValue){   
+        if(eventValue !== ""){
+          setLogData({...logData,[eventName]:eventValue})
+          localStorage.setItem("username",logData.email)
+        }else{
+          alert("Something went wrong")
+        }
+      console.log(eventName,eventValue);
+     }
 
     function sendData(job){
       if (job !== "") {
@@ -22,15 +38,13 @@
       }
     }
 
-    React.useEffect(() => {
-      // This will log the updated state after each state change
-      console.log("Updated state:", selectedJob);
-    }, [selectedJob]);
+  
+
     return (
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login onChange={updateLoginData} />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/main" element={<Main data={jobData} onClick={sendData} />} />
           <Route path="/jobinformation" element={<JobInformation  jobData={selectedJob} />} />

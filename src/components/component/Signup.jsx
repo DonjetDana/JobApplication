@@ -1,8 +1,62 @@
 import React from "react"
 import Logo from "../images/job-removebg-preview.png"
 import "../css/login.css"
+import { useNavigate } from "react-router-dom"
 
 export default function Signup() {
+    const [signupData,setSignupData] = React.useState({
+        firstname:"",
+        lastname:"",
+        email:"",
+        birthday:'',
+        gender:"",
+        password:""
+       })
+    
+    const navigate = useNavigate();
+
+    function handleSignup(event){
+        const {name,value} = event.target
+        setSignupData({...signupData,[name]:value})
+    }
+
+    function handleSubmit(e){
+        e.preventDefault();
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const passwordRegex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\S+$).{8,20}$/;
+        if (!signupData.firstname.trim()) {
+           alert("Please fill the field firstname");
+           return;
+        }
+        if (!signupData.lastname.trim()) {
+            alert("Please fill the field lastname")
+            return;
+        }
+        if (!signupData.email.trim() || !emailRegex.test(signupData.email)) {
+            alert("Please fill the field email")
+            return;
+        }
+        if (!signupData.birthday.trim()) {
+            alert("Please fill the field birthday")
+            return;
+        }
+        if (!signupData.gender.trim()) {
+            alert("Please fill the field gender")
+            return;
+        }
+        if (!signupData.password.trim() || !passwordRegex.test(signupData.password)) {
+            alert("Password must have min.8 characters,one uppercase letter,one number and one special character")
+        }
+
+        // If no errors, proceed with submitting data
+        console.log("signupData:", signupData);
+
+        navigate("/main");
+
+    }
+    
+    
     return (
         <div>
 
@@ -12,28 +66,32 @@ export default function Signup() {
                         <div className="logoDiv mb-3 d-flex justify-content-center ">
                             <img src={Logo} alt="Logo" width="80px" height="60px" />
                         </div>
-                        <form action="#" className="signupForm">
+                        <form action="#" className="signupForm" onSubmit={handleSubmit}>
                             <div className="contentSignup pt-3  my-0 mx-auto">
                                 <h2 className=" text-center mt-3 mb-3 ">Create a new acount</h2>
                                 <div className="mb-3 mt-3 d-flex flex-column justify-content-center">
                                     <div className="row div-row">
                                         <div className="col div-col">
-                                            <input type="text" className="form-control ps-2" id="firstname" placeholder="First name" name="firstname" />
+                                            <input type="text" className="form-control ps-2" id="firstname" placeholder="First name" name="firstname" 
+                                            onChange={(e)=>handleSignup(e)}/>
                                         </div>
                                         <div className="col div-col">
-                                            <input type="text" className="form-control ps-2" id="lastname" placeholder="Last name" name="lastname" />
+                                            <input type="text" className="form-control ps-2" id="lastname" placeholder="Last name" name="lastname" 
+                                          onChange={(e)=>handleSignup(e)}/>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div className="mb-3 mt-3 d-flex flex-column justify-content-center">
                                     <div className="div-input">
-                                        <input type="email" className="form-control ps-2" id="email" placeholder="Email or phone number" name="email" />
+                                        <input type="email" className="form-control ps-2" id="email" placeholder="Email or phone number" name="email" 
+                                       onChange={(e)=>handleSignup(e)}/>
                                     </div>
                                 </div>
                                 <div className="mb-3 mt-3 d-flex flex-column justify-content-center">
                                     <div className="div-input">
-                                        <input type="date" className="form-control ps-2" id="birthday" name="birthday" />
+                                        <input type="date" className="form-control ps-2" id="birthday" name="birthday" 
+                                        onChange={(e)=>handleSignup(e)}/>
                                     </div>
                                 </div>
                                 <div className="mb-3 mt-3 d-flex flex-column justify-content-center">
@@ -41,15 +99,16 @@ export default function Signup() {
                                         <div className="col div-col">
                                             <div className="checkboxes-signup">
                                                 <label className="w-100 ps-1">Male
-                                                    <input type="radio" className="checkbox-input" value="Male" name="gender" />
+                                                    <input type="radio" className="checkbox-input" value="Male" name="gender" 
+                                                   onChange={(e)=>handleSignup(e)}/>
                                                 </label>
-
                                             </div>
                                         </div>
                                         <div className="col div-col">
                                             <div className="checkboxes-signup">
                                                 <label className="w-100 ps-1">Female
-                                                    <input type="radio" className="checkbox-input" value="Female" name="gender" />
+                                                    <input type="radio" className="checkbox-input" value="Female" name="gender" 
+                                                   onChange={(e)=>handleSignup(e)}/>
                                                 </label>
                                             </div>
                                         </div>
@@ -57,7 +116,8 @@ export default function Signup() {
                                 </div>
                                 <div className="mb-3 mt-3 d-flex flex-column justify-content-center">
                                     <div className="div-input">
-                                        <input type="password" className="form-control ps-2" id="password" placeholder="Password" name="password" />
+                                        <input type="password" className="form-control ps-2" id="password" placeholder="Password" name="password" 
+                                      onChange={(e)=>handleSignup(e)}/>
                                     </div>
 
                                     <p className="policy text-muted mt-1 ">People who use our service may have uploaded your contact information to JobApplication.
