@@ -2,12 +2,17 @@ import React from "react"
 import Logo from "../images/job-removebg-preview.png"
 import "../css/login.css"
 
-export default function Login({onChange}) {
+export default function Login({onChange,handleLogIn}) {
 
     function handleChange(event){
         const {name,value} = event.target;
 
         onChange(name,value)
+    }
+
+    function handleSignIn(e){
+        e.preventDefault();
+        handleLogIn(e);
     }
 
 
@@ -20,7 +25,7 @@ export default function Login({onChange}) {
                     <div className="logoDiv mb-3 d-flex justify-content-center ">
                         <img src={Logo} alt="Logo" width="80px" height="60px" />
                     </div>
-                    <form action="#" className="loginForm">
+                    <form  className="loginForm" onSubmit={(e) => handleSignIn(e)}>
                         <div className="content pt-3  my-0 mx-auto">
                             <p className="content-p text-center mt-3 mb-3 ">Log into JobApplication</p>
                             <div className="mb-3 mt-3 d-flex flex-column justify-content-center">

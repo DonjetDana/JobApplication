@@ -2,6 +2,9 @@ import React from "react"
 import Logo from "../images/job-removebg-preview.png"
 import "../css/login.css"
 import { useNavigate } from "react-router-dom"
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, database } from '../../firebase';
+import { ref, set } from 'firebase/database';
 
 export default function Signup() {
     const [signupData,setSignupData] = React.useState({
@@ -20,7 +23,7 @@ export default function Signup() {
         setSignupData({...signupData,[name]:value})
     }
 
-    function handleSubmit(e){
+    const handleSubmit = async(e) => {
         e.preventDefault();
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -52,8 +55,30 @@ export default function Signup() {
         // If no errors, proceed with submitting data
         console.log("signupData:", signupData);
 
-        navigate("/main");
+        try{
+            const userCredentials = await createUserWithEmailAndPassword(
+                auth,
+                signupData.email,
+                signupData.password
+            )
 
+            const uid = userCredentials.user.uid
+
+            const userRef = ref(database,`users/${uid}`);
+            set(database,userRef,{
+                firstname:signupData.firstname,
+                lastname:signupData.lastname,
+                email:signupData.email,
+                birthday:signupData.birthday,
+                gender:signupData.gender,
+                password:signupData.password
+            })
+           
+        }catch(error){
+            console.log(error)
+        }
+
+        navigate("/main");
     }
     
     
@@ -66,7 +91,7 @@ export default function Signup() {
                         <div className="logoDiv mb-3 d-flex justify-content-center ">
                             <img src={Logo} alt="Logo" width="80px" height="60px" />
                         </div>
-                        <form action="#" className="signupForm" onSubmit={handleSubmit}>
+                        <form  className="signupForm" onSubmit={handleSubmit}>
                             <div className="contentSignup pt-3  my-0 mx-auto">
                                 <h2 className=" text-center mt-3 mb-3 ">Create a new acount</h2>
                                 <div className="mb-3 mt-3 d-flex flex-column justify-content-center">
